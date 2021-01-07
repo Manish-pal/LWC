@@ -1,0 +1,28 @@
+<apex:page standardController="Lead">
+    
+    <apex:form >
+    	<apex:pageBlock title="Lead">
+        	<apex:pageBlockSection columns="3">
+                
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            	<apex:pageBlockSectionItem >
+                	
+                    <apex:inputField value="{!Lead.LastName}" />                
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                
+                	<apex:inputField value="{!Lead.company}" />
+                </apex:pageBlockSectionItem>
+                
+				<apex:pageBlockSectionItem >
+                	<apex:inputField value="{!Lead.status}" />
+                </apex:pageBlockSectionItem>            
+            
+            </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

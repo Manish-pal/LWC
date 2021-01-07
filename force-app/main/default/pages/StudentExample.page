@@ -1,0 +1,15 @@
+<apex:page controller="StudentExample">
+    <apex:form >
+        <apex:commandButton value="call" action="{!DataUpdation}" /> <br/><br/>
+        
+        <apex:commandButton value="Reset" action="{!Reset}"/>
+    </apex:form>
+    
+    
+    
+ Name : {!name }<br/><br/>
+ Branch: {!branch}<br/><br/>
+ City :  {! city } <br/><br/>
+    
+   
+</apex:page>

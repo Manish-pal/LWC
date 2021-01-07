@@ -1,0 +1,37 @@
+<apex:page controller="Add">
+    <apex:form >
+    	
+        
+        
+        <apex:pageBlock title="Addition" id="pb" >
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >firstNum</apex:outputLabel>
+                    <apex:inputText value="{!firstNum}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel >SecondNum</apex:outputLabel>
+                	<apex:inputText value="{!secondNum}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel >Sum</apex:outputLabel>
+                    <apex:inputText value="{!Sum}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+					<apex:commandButton action="{!Add}" value="addNum" reRender="pb" />
+        			<apex:commandButton action="{!reset}" value="Refresh" reRender="pb"/>
+                </apex:pageBlockSectionItem>            
+               
+                
+            </apex:pageBlockSection>
+            
+            
+        
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>
