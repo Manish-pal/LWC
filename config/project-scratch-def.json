@@ -1,7 +1,7 @@
 {
   "orgName": "Demo company",
   "edition": "Developer",
-  "features": [],
+  "features": ["MultiCurrency", "AuthorApex", "PersonAccounts", "Communities"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
@@ -9,7 +9,8 @@
     "securitySettings": {
       "passwordPolicies": {
         "enableSetPasswordInApi": true
-      }
+      },
+      "hasSampleData": true
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
