@@ -3,15 +3,19 @@
     <h1>This is Simple Calculator</h1>
     <lightning-card>
 
-       <lightning-input label="PLease Enter First Number" name="Number1" type="Number">
+       <lightning-input label="PLease Enter First Number" name="Number1" onchange={handleChange}>
 
        </lightning-input><br><br>
 
-       <lightning-input label="Please enter Second number" name="Number2" type="Number"> </lightning-input><br>
+       <lightning-input label="Please enter Second number" name="Number2" onchange={handleChange} class="slds-m-left_x-small" > </lightning-input><br>
 
-       <lightning-button label="Add" name="add" type="Submit" onclick={doAddition} ></lightning-button><br>
-       <br><br>
-       <h3>Result is:-      {result}</h3>
+       <lightning-button label="Add" variant="brand-outline" name="add" onclick={doAddition} class="slds-m-left_x-small" ></lightning-button>
+      
+       <lightning-button label="Subtract" variant="brand-outline" name="sub" onclick={doSubtraction} class="slds-m-left_x-small" ></lightning-button> 
+       <lightning-button label="Multiply" variant="brand-outline" name="mul" onclick={doMultiplication} class="slds-m-left_x-small" ></lightning-button> 
+       <lightning-button label="Division" variant="brand-outline" name="div" onclick={doDivision} class="slds-m-left_x-small" ></lightning-button><br>
+       
+       <h3>Result is:-      {result} </h3> 
     
     </lightning-card>
 </template>

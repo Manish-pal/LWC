@@ -4,7 +4,6 @@ export default class SimpleCalculator_Demo extends LightningElement {
 
     @track number1;
     @track number2;
-
     @track result;
 
     handleChange(event){
@@ -12,7 +11,7 @@ export default class SimpleCalculator_Demo extends LightningElement {
         const currentInputName = event.target.name;
         const currentVal= event.target.value;
 
-        if(currentInputName == 'Number1'){
+        if(currentInputName === 'Number1'){
             this.number1 = currentVal;
         }else {
 
@@ -23,8 +22,11 @@ export default class SimpleCalculator_Demo extends LightningElement {
     // Addition method for the adding numbers
     doAddition() {
 
-        this.result = parseInt(this.number1) + parseInt(this.number2);
+        this.result = (parseInt(this.number1) + parseInt(this.number2)).toString();
+        //this.result = this.number1 + this.number2;
+        alert(this.result);
     }
+    
 
     doSubtraction() {
 
