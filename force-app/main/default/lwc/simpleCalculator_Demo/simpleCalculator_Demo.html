@@ -1,0 +1,17 @@
+<template>
+
+    <h1>This is Simple Calculator</h1>
+    <lightning-card>
+
+       <lightning-input label="PLease Enter First Number" name="Number1" type="Number">
+
+       </lightning-input><br><br>
+
+       <lightning-input label="Please enter Second number" name="Number2" type="Number"> </lightning-input><br>
+
+       <lightning-button label="Add" name="add" type="Submit" onclick={doAddition} ></lightning-button><br>
+       <br><br>
+       <h3>Result is:-      {result}</h3>
+    
+    </lightning-card>
+</template>
