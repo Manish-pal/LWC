@@ -2,6 +2,8 @@ Installation Doc for Java, Ant, HomeBrew in Mac
 
 HomeBrew Installation From _https://github.com/Homebrew/brew_
 
+*How to check homebrew is installed?*
+Open terminal brew --version
 
 Paste the below command in mac terminal.
 
@@ -31,14 +33,15 @@ Download Ant  See Binary Distribution (http://ant.apache.org/manual/install.html
 cmd + shift + G -----> Enter the path location to access the folder/directory* 
 
 Issues Faced during accessing the .bash_profile along with setting path variables:
-[Image: image.png]
+<img src="">
+<img src="https://user-images.githubusercontent.com/61345495/116462555-3220e500-a887-11eb-9207-2f93ba52f0f1.png">
 Used below command as sudo user in order to open and access the file:
 sudo open -e ~/.bash_profile
 
-brew install ant. ---> Success!
+brew install ant. ---> Success!      ********Ant Installation COMPLETED!*********
 
 
-[Image: image.png]
+ <img src="https://user-images.githubusercontent.com/61345495/116462639-4c5ac300-a887-11eb-864b-b141352723ac.png">
 Downlaod the ant Migration tool zip file from below link:
 https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/forcemigrationtool_install.htm
 
@@ -59,13 +62,17 @@ When you give Ant a command, it will read the build.xml configuration file, sear
 We may wonder how ANT connects to our target Salesforce instance, that’s where build.properties file comes into the picture 
 i.e. build.properties where you can specify the Salesforce instance details such as test | login, username and password with security token.
 
-[Image: image.png]*build.xml File*
-[Image: image.png]Once the components are identified, we can make a list and put it into the package.xml file 
+<img src="https://user-images.githubusercontent.com/61345495/116462835-904dc800-a887-11eb-94d5-1e3d6487df60.png">
+
+*build.xml File*
+<img src="https://user-images.githubusercontent.com/61345495/116462889-a3609800-a887-11eb-893a-b17727514bfd.png">
+
+Once the components are identified, we can make a list and put it into the package.xml file 
 when we run ANT it will check for the package.xml file and list of components. 
 
 See below screenshot for reference, you will get to know that we’ve to specify the components in element you can either specify individual component names or specify * for all components for that type like (ApexClass, ApexTrigger, Pages, and so on). 
 
-[Image: image.png]
+<img src="https://user-images.githubusercontent.com/61345495/116463039-d440cd00-a887-11eb-8b74-19dfd43bdbcb.png">
 For more info on component types (https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/manifest_samples.htm)
 
 Now we need to retrieve the data from 1st org and will be deploying it to another org.
@@ -74,21 +81,26 @@ _*retrieve data* _
 Now the first step is to first retrieve Code from my DevOrg1. to do this, open the command prompt and navigate to the path/directory where you want to retrieve the code.
 
 Let’s see how that works:-Let’s observe and understand build.xml tags, in this case we first understand the structure of retrieveCode tag.
-[Image: image.png]Two Important Attributes are 
+<img src="https://user-images.githubusercontent.com/61345495/116463109-ecb0e780-a887-11eb-859c-4b4131bef2b7.png">
+
+Two Important Attributes are 
 retrieveTarget → where exactly (directory name) you want to retrieve your code.
 unpackaged → this attribute is to specify the package.xml itself (I am specifying it inside the codepkg folder itself)
 
 Now we can execute the ant command to retrieve all components, ant retrieveCode
 once you hit enter it will, it will fetch all the components mentioned in the package.xml and put those into the target folder.
 
-[Image: image.png]
+<img src="https://user-images.githubusercontent.com/61345495/116463166-018d7b00-a888-11eb-9e94-fe1fba3bbf2e.png">
 Since we fetched all the related components in a folder now, we want to copy the same code to my second org. In order to that follow the below steps:
 
 Open the Build.properties file and replace the org credentials, with the 2nd Org credentials.
 Goto build.xml to see the configuration for the deployCode tag. <Screenshot below>
-[Image: image.png]Now let’s deploy the code to the other org.
+<img src="https://user-images.githubusercontent.com/61345495/116463379-42858f80-a888-11eb-91b7-d08767f9c4b6.png">
+
+Now let’s deploy the code to the other org.
 Open the command prompt and navigate until the you source code folder (where we saved our code).
 
 Enter command ant deployCode 
 it will start deploying your source code to the specified Salesforce org. 
 This runs using the deployAPI call, using the sample class and Account trigger provided with the Force.com Migration Tool. The ant deployCode calls the Ant target named deploy in the build.xml file.
+<img src="https://user-images.githubusercontent.com/61345495/116463434-503b1500-a888-11eb-95f6-39d527504e53.png">
