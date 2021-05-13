@@ -4,5 +4,17 @@
     "edition": "Developer",
     "features": ["Communities", "DebugApex", "EinsteinAnalyticsPlus","ProcessBuilder", "Workflow", "RecordTypes"],
     "hasSampleData": true,
-    "orgName": "ScratchPlayground"
+    "orgName": "ScratchPlayground",
+
+    "settings": {
+        "lightningExperienceSettings": {
+          "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+          "enableS1EncryptedStoragePref2": false
+        },
+        "communitiesSettings":{
+            "enableNetworksEnabled": true
+        }
+      }
 }
