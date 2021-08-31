@@ -1,0 +1,14 @@
+:host{
+    background-color: whitesmoke;
+    border: thin solid black;
+    border-radius: 2px;
+}
+
+.my-div{
+
+    background-color: wheat;
+    border-radius: 10px;
+    color: blueviolet;
+    font-size: medium;
+    font-style: italic;
+}

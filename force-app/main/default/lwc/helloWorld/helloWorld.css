@@ -1,0 +1,19 @@
+
+.hello-world{
+    background-color: antiquewhite;
+    font-size: medium;
+}
+
+.future-world {
+    background-color: green;
+    color:white;
+}
+
+div{
+
+    border: 3px solid antiquewhite;
+}
+
+:host{
+    border:4px solid red;
+}
