@@ -3,6 +3,8 @@ import { LightningElement, track, api } from 'lwc';
 export default class SimpleCalculator extends LightningElement {
 
     @track currentResult;
+    @track previousResults = [];
+    @track showPreviousResult = false;
 
     firstNumber;
     secondNumber;
@@ -24,15 +26,17 @@ export default class SimpleCalculator extends LightningElement {
 
        // this.currentResult = 'Result of ' + firstN +' + ' +secondN+ ' is' + (firstN + secondN);
         this.currentResult = `Result of ${firstN} + ${secondN} is ${firstN + secondN}`;
+        this.previousResults.push(this.currentResult);
 
     }
 
     subHandler() {
 
-        const firstN = parseInt(this.firstN);
+        const firstN = parseInt(this.firstNumber);
         const secondN = parseInt(this.secondNumber);
 
         this.currentResult = `Result of ${firstN} - ${secondN} is ${firstN-secondN}`;
+        this.previousResults.push(this.currentResult);
 
     }
 
@@ -42,6 +46,8 @@ export default class SimpleCalculator extends LightningElement {
         const secondN = parseInt(this.secondNumber);
 
         this.currentResult =   `Result of ${firstN} X ${secondN} is ${firstN*secondN}`;
+
+        this.previousResults.push(this.currentResult);
     }
 
     divisionHandler() {
@@ -50,6 +56,13 @@ export default class SimpleCalculator extends LightningElement {
         const secondN = parseInt(this.secondNumber);
 
         this.currentResult = `Result of ${firstN} / ${secondN} is ${firstN/secondN}`;
+
+        this.previousResults.push(this.currentResult);
+    }
+
+    showPreviousResultToggle(event) {
+
+        this.showPreviousResult = event.target.checked;
     }
 
 }
