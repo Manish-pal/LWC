@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title={cardTitle}>
+
+        <lightning-button label="Change Private Property Value" onclick={changePrivatePropertyVal}></lightning-button>
+
+        <lightning-input type="number" step="0.01" label="Weight in Kilogram" onchange={onWeightChange}></lightning-input>
+        <lightning-input type='number' step="0.01" label="Height in meters" onchange={onHeightChange}></lightning-input>   
+        
+        <lightning-button label="GetBMI" onclick={getBMI}> </lightning-button>
+            <p>
+                Your BMI is {bmi}
+            </p>
+
+       
+    </lightning-card>
+</template>
