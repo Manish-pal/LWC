@@ -1,4 +1,5 @@
 <template>
+    
     <lightning-card title="Meeting Rooms">
         <ul>
             <template for:each={meetingRoomsInfo} for:item="room">
@@ -7,7 +8,9 @@
 
                     <!-- The LWC components when used inside other components use kebab-case instead of camelCase
                     Public property is also converted as kebab-case-->
-                    <c-meeting-room meeting-room-info={room} ></c-meeting-room>
+                    <c-meeting-room meeting-room-info={room} show-room-info></c-meeting-room>
+
+                    <!-- We are adding the boolean public proerty (show-room-info) so it automatically takes it value as true-->
                 </li>
 
 
