@@ -1,0 +1,9 @@
+<template>
+            <!-- Simple -->
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-tile label={meetingRoomInfo.roomName} href="#">
+                    <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Room Capacity : {meetingRoomInfo.roomCapacity}</p>
+                    <!-- As we are using a public property so it's value should come from a parent component which is MeetingRooms-->
+                </lightning-tile>
+            </div>
+</template>
