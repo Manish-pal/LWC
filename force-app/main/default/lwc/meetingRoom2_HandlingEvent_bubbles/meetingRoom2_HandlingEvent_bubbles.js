@@ -3,11 +3,22 @@ import { LightningElement, track,api } from 'lwc';
 export default class MeetingRoom2_HandlingEvent_bubbles extends LightningElement {
 
     @track selectedMeetingRoomInfo;
+
     @track selectedMeetingRoom;
     @api meetingRoomInfo; 
 
-    //@api showRoomInfo = false;
+    @api showRoomInfo = false;
 
+    meetingRoomsInfo = [
+        {roomName:'A1-01', roomCapacity: '12'},
+        {roomName:'B1-01', roomCapacity: '16'},
+        {roomName:'A2-02', roomCapacity: '10'},
+        {roomName:'A3-03', roomCapacity: '6'},
+        {roomName:'C2-02', roomCapacity: '18'},
+        {roomName:'c1-01', roomCapacity: '20'}
+    ];
+
+    // this is a js method which was supposed to be fired on event "ontileclick" 
     onTileSelectHandler(event) {
 
         const meetingRoomInfo =  event.detail;
