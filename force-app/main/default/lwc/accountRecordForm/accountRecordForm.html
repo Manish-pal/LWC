@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Account Record Form">
+        <div class="slds-p-around_medium">
+
+            <!--lightning Record Form -->
+
+            <lightning-record-form object-api-name="Account" record-id={recordId} columns="2" 
+            mode="edit" fields={fieldsArray} layout-type="compact" onsuccess={handleSuccess}>
+
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
+
+
+                <!-- if you won't pass the recordId it will take it as create mode only
+                
+                mode
+                > this will allow the mode in which record will be behaving
+                    readonly ==> only viewing the record, not editable
+                    view ==> for viewing the record, but can make the form editable
+                    edit ==> for editing the record, click save button will switch the form in view mode.
+                 -->

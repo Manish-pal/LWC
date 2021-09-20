@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="All accounts">
+        <lightning-input type="number" label="Number of Accounts" onchange={numberOfAccountChangeHandler}></lightning-input>
+        <p>
+            <lightning-button label="Get Accounts" onclick={getAccounts}></lightning-button>
+        </p>
+        <ul>
+            <template if:true={responseReceived}>
+                <!-- wire service provisions the list of accounts to accounts.data property-->
+          <!--  <template for:each={accounts.data} for:item="account">    WHILE NOT USING IMPERATIVE APEX -->
+                <template for:each={accounts} for:item="account">
+                <li key={account.id}>
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-tile label={account.Name} type="media">
+                            <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                            <p class="slds-truncate" title={account.Phone}>{account.phone}</p>
+                        </lightning-tile>
+                    </div>
+
+                </li>
+            </template>
+        </template>
+        </ul>
+    </lightning-card>
+</template>
