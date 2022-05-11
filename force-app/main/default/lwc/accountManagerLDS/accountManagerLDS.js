@@ -3,7 +3,6 @@ import {createRecord, getRecord} from 'lightning/uiRecordApi';
 
 //getRecord is a wireadaptor which reterives a record from salesforce without the need of server-side controller
 
-
 const fieldArray = ['Account.Name', 'Account.Phone', 'Account.Website'];  // values we want to retrieve
 export default class AccountManagerLDS extends LightningElement {
 
@@ -11,18 +10,15 @@ export default class AccountManagerLDS extends LightningElement {
     @track accountPhone;
     @track accountWebsite;
     
-
     //preoperty to hold the record Id
     @track recordId;
-
 
     // the $ symbol means that the value is passed dynamically. when the values changes it can be rerendered
     @wire(getRecord, {recordId:'$recordId', fields:fieldArray})
     accountRecord;  // response returned from the wire service will be stored in accountRecord
 
     accountNameChangeHandler(event){
-        this.accountName = event.target.value;
-        
+        this.accountName = event.target.value;        
     }
 
     accountPhoneChangeHandler(event) {
